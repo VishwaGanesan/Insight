@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Insight | Future finder</title>
+        <link rel="stylesheet" type="text/css" href="page.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="appController">
+            <div class="navBar">
+                    <div id="title">
+                        <h1>Insight</h1>
+                    </div>
+                    <div class="navItems">      
+                        <ol>
+                            <li>
+                                <a  href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <button ng-click="show()">About</button>
+                            </li>
+                            <li>
+                                <button ng-click="tshow()">About Test</button>
+                            </li>
+                        </ol>
+                    </div>
+            </div>
+            <div  class="ng-cloak" id="popUs" ng-show="model.showPopus">
+                    <blockquote>
+                                Students feel difficult to choose the right career path after completing their schooling. In many circumstances, students select their career based on the marks and external opinions. And after going to the college they struggle a lot to sustain in the stream they have chosen.
+                                This web application mainly concentrates on the students who have completed their high school and are to go for higher studies. In this application we conduct a test known as RAISEC test. In this we use the questions which are created by John Holland. In this test, fortytwo  questions will be asked. Based on the responses, the student’s interests and willingness are evaluated. Based on this, certain suggestions are given to the students that help them in choosing their ideal stream.
+                                
+                        </blockquote>
+                        <button ng-click="dshow()">close</button>
+            </div>
+            <div class="ng-cloak" id="popTest" ng-show="model.showPoptest">
+                    <blockquote>
+                        <h2>About Test</h2>
+                        The Holland Codes or the Holland Occupational Themes (RIASEC) refers to a theory of careers and vocational choice (based upon personality types) that was initially developed by American psychologist John L. Holland.
+
+                        The US Department of Labor ETA has been using an updated and expanded version of the RIASEC model in the "Interests" section of its free online database, The Occupational Information Network (O*NET),[3] since its inception during the late 1990s.
+                    <h2>Instructions for test</h2>
+                       -Your are able to attend the questions only once<br>
+                       -Only after attending all the questions,the submit button is enabled<br>
+                       -Accurancy of the test is based on how honestly you answer<br>
+                </blockquote>
+                    <button ng-click="dshow()">close</button>
+            </div>
+            <div class="bigCard">
+                    <div class="container-fluid">
+                            <div class="smallCard">
+                                <h3>&nbsp &nbsp I like to work on cars</h3>
+                                    <button  class="yes" ng-disabled="b1" ng-click="bt1(1)">Yes</button>
+                                    <button  class="no"  ng-disabled="b1" ng-click="bt1(0)">no</button>
+                            </div>
+                            <div class="smallCard">
+                                <h3> &nbsp &nbsp I like to do puzzles</h3>
+                                <button   class="yes"  ng-disabled="b2" ng-click="bt2(1)">Yes</button>
+                                <button   class="no" ng-disabled="b2" ng-click="bt2(0)">no</button>
+                            </div>
+                            <div class="smallCard">
+                                    <h3>&nbsp &nbsp I am good at working Independently</h3>
+                                    <button  class="yes" ng-disabled="b3"  ng-click="bt3(1)">Yes</button>
+                                    <button  class="no" ng-disabled="b3"  ng-click="bt3(0)">no</button>
+                            </div>
+                            <div class="smallCard">
+                                    <h3>&nbsp &nbsp I like to work in teams </h3>
+                                    <button  class="yes" ng-disabled="b4" ng-click="bt4(1)">Yes</button>
+                                    <button  class="no" ng-disabled="b4"  ng-click="bt4(0)">no</button>
+                            </div>
+                            <div class="smallCard">
+                                    <h3>&nbsp &nbsp I am an ambitious person I set goal for myself</h3>
+                                    <button   class="yes" ng-disabled="b5" ng-click="bt5(1)">Yes</button>
+                                    <button  class="no"ng-disabled="b5" ng-click="bt5(0)">no</button>
+                            </div>
+                    </div>
+            </div>
+            <div class="bigCard">
+                <div class="container">
+                        <div class="smallCard">
+                            <h3>&nbsp &nbsp I like to organize things</h3>
+                                <button   class="yes" ng-disabled="b6" ng-click="bt6(1)">Yes</button>
+                                <button  class="no" ng-disabled="b6" ng-click="bt6(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                            <h3>&nbsp &nbsp I like to build things </h3>
+                            <button   class="yes" ng-disabled="b7"ng-click="bt7(1)">Yes</button>
+                            <button   class="no" ng-disabled="b7" ng-click="bt7(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3> &nbsp &nbsp I like to read about art and music </h3>
+                                <button  class="yes" ng-disabled="b8"ng-click="bt8(1)">Yes</button>
+                                <button   class="no" ng-disabled="b8" ng-click="bt8(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3>&nbsp &nbsp  I like to have clear instructions  to follow
+                                </h3>
+                                <button  class="yes" ng-disabled="b9" ng-click="bt9(1)">Yes</button>
+                                <button   class="no" ng-disabled="b9" ng-click="bt9(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3>&nbsp &nbsp I like to try to influence or persuade people
+                                </h3>
+                                <button   class="yes"ng-disabled="b10" ng-click="bt10(1)">Yes</button>
+                                <button   class="no"ng-disabled="b10" ng-click="bt10(0)">no</button>
+                        </div>
+                </div>
+        </div>
+        <div class="bigCard">
+                <div class="container">
+                        <div class="smallCard">
+                            <h3>&nbsp &nbsp I like to do experiments</h3>
+                                <button  class="yes" ng-disabled="b11" ng-click="bt11(1)">Yes</button>
+                                <button   class="no" ng-disabled="b11" ng-click="bt11(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                            <h3>&nbsp &nbsp I like to teach or train people
+                        </h3>
+                            <button   class="yes" ng-disabled="b12" ng-click="bt12(1)">Yes</button>
+                            <button   class="no" ng-disabled="b12" ng-click="bt12(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3> &nbsp &nbsp I like trying to help people solve their problems</h3>
+                                <button  class="yes" ng-disabled="b13"ng-click="bt13(1)">Yes</button>
+                                <button   class="no" ng-disabled="b13" ng-click="bt13(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3>&nbsp &nbsp I like to take care of animals
+                                </h3>
+                                <button   class="yes" ng-disabled="b14" ng-click="bt14(1)">Yes</button>
+                                <button   class="no" ng-disabled="b14" ng-click="bt14(0)">no</button>
+                        </div>
+                        <div class="smallCard">
+                                <h3>&nbsp &nbsp I wouldn’t mind working 8 hours per day in an office</h3>
+                                <button   class="yes" ng-disabled="b15" ng-click="bt15(1)">Yes</button>
+                                <button   class="no" ng-disabled="b15" ng-click="bt15(0)">no</button>
+                        </div>
+                </div>
+        </div>
+        <div class="bigCard">
+            <div class="container">
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp I like selling things </h3>
+                            <button   class="yes" ng-disabled="b16" ng-click="bt16(1)">Yes</button>
+                            <button   class="no" ng-disabled="b16" ng-click="bt16(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp I enjoy creative writing
+                                </h3>
+                        <button   class="yes"ng-disabled="b17" ng-click="bt17(1)">Yes</button>
+                        <button   class="no" ng-disabled="b17" ng-click="bt17(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3> &nbsp &nbsp I enjoy science
+                                </h3>
+                            <button  class="yes" ng-disabled="b18" ng-click="bt18(1)">Yes</button>
+                            <button  class="no" ng-disabled="b18" ng-click="bt18(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp I am quick to take on new responsibilities</h3>
+                            <button   class="yes" ng-disabled="b19" ng-click="bt19(1)">Yes</button>
+                            <button  class="no" ng-disabled="b19" ng-click="bt19(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp  I am interested in healing people
+                        </h3>
+                            <button   class="yes" ng-disabled="b20" ng-click="bt20(1)">Yes</button>
+                            <button   class="no" ng-disabled="b20" ng-click="bt20(0)">no</button>
+                    </div>
+        </div>
+        <div class="bigCard">
+            <div class="container">
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp  I enjoy trying to figure out how things work
+                                </h3>
+                            <button   class="yes"  ng-disabled="b21" ng-click="bt21(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b21" ng-click="bt21(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp I like putting things together or assembling things
+                        </h3>
+                        <button   class="yes"  ng-disabled="b22" ng-click="bt22(1)">Yes</button>
+                        <button   class="no"  ng-disabled="b22" ng-click="bt22(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp I am a creative person</h3>
+                            <button  class="yes"  ng-disabled="b23" ng-click="bt23(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b23" ng-click="bt23(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp I pay attention to details</h3>
+                            <button  class="yes"  ng-disabled="b24" ng-click="bt24(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b24" ng-click="bt24(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3> &nbsp &nbsp I like to do filing or typing</h3>
+                            <button  class="yes"  ng-disabled="b25" ng-click="bt25(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b25" ng-click="bt25(0)">no</button>
+                    </div>
+            </div>
+        </div>
+        <div class="bigCard">
+            <div class="container">
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp I like to analyze things (problems/ situations)
+                                </h3>
+                            <button   class="yes"  ng-disabled="b26" ng-click="bt26(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b26" ng-click="bt26(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                        <h3>&nbsp &nbsp I like to play instruments or sing
+                                </h3>
+                        <button   class="yes"  ng-disabled="b27" ng-click="bt27(1)">Yes</button>
+                        <button   class="no"  ng-disabled="b27" ng-click="bt27(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3> &nbsp &nbsp I enjoy learning about other cultures
+                                </h3>
+                            <button  class="yes"  ng-disabled="b28" ng-click="bt28(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b28" ng-click="bt28(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp I would like to start my own business
+                        </h3>
+                            <button  class="yes"  ng-disabled="b29" ng-click="bt29(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b29" ng-click="bt29(0)">no</button>
+                    </div>
+                    <div class="smallCard">
+                            <h3>&nbsp &nbsp I like to cook</h3>
+                            <button   class="yes"  ng-disabled="b30" ng-click="bt30(1)">Yes</button>
+                            <button   class="no"  ng-disabled="b30" ng-click="bt30(0)">no</button>
+                    </div>
+            </div>
+     </div>
+     <div class="bigCard">
+        <div class="container">
+                <div class="smallCard">
+                    <h3> &nbsp &nbsp I like acting in plays
+                    </h3>
+                        <button   class="yes"  ng-disabled="b31" ng-click="bt31(1)">Yes</button>
+                        <button   class="no"  ng-disabled="b31" ng-click="bt31(0)">no</button>
+                </div>
+                <div class="smallCard">
+                    <h3>&nbsp &nbsp I am a practical person</h3>
+                    <button  class="yes"  ng-disabled="b32" ng-click="bt32(1)">Yes</button>
+                    <button  class="no"  ng-disabled="b32" ng-click="bt32(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp  I like working with numbers  or charts
+                                </h3>
+                        <button  class="yes"  ng-disabled="b33" ng-click="bt33(1)">Yes</button>
+                        <button   class="no"  ng-disabled="b33" ng-click="bt33(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I like to get into discussions about issues
+                        </h3>
+                        <button  class="yes"  ng-disabled="b34" ng-click="bt34(1)">Yes</button>
+                        <button  class="no"  ng-disabled="b34" ng-click="bt34(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I am good at keeping records of my work
+                        </h3>
+                        <button   class="yes"  ng-disabled="b35" ng-click="bt35(1)">Yes</button>
+                        <button   class="no"  ng-disabled="b35" ng-click="bt35(0)">no</button>
+                </div>
+        </div>
+    </div>
+    <div class="bigCard">
+        <div class="container">
+                <div class="smallCard">
+                    <h3>&nbsp &nbsp I like to lead
+                    </h3>
+                        <button  class="yes" ng-disabled="b36" ng-click="bt36(1)">Yes</button>
+                        <button  class="no" ng-disabled="b36" ng-click="bt36(0)">no</button>
+                </div>
+                <div class="smallCard">
+                    <h3>&nbsp &nbsp I like working outdoors</h3>
+                    <button class="yes" ng-disabled="b37" ng-click="bt37(1)">Yes</button>
+                    <button class="no" ng-disabled="b37" ng-click="bt37(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I would like to work in an office</h3>
+                        <button class="yes" ng-disabled="b38" ng-click="bt38(1)">Yes</button>
+                        <button class="no" ng-disabled="b38" ng-click="bt38(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I’m good at math</h3>
+                        <button class="yes" ng-disabled="b39" ng-click="bt39(1)">Yes</button>
+                        <button class="no" ng-disabled="b39" ng-click="bt39(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I like helping people</h3>
+                        <button class="yes" ng-disabled="b40" ng-click="bt40(1)">Yes</button>
+                        <button class="no" ng-disabled="b40" ng-click="bt40(0)">no</button>
+                </div>
+        </div>
+    </div>
+    <div class="bigCard" id="rest">
+        <div class="container">
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I like to draw</h3>
+                        <button class="yes" ng-disabled="b41" ng-click="bt41(1)">Yes</button>
+                        <button class="no" ng-disabled="b41" ng-click="bt41(0)">no</button>
+                </div>
+                <div class="smallCard">
+                        <h3>&nbsp &nbsp I like to give speeches</h3>
+                        <button class="yes" ng-disabled="b42" ng-click="bt42(1)">Yes</button>
+                        <button class="no" ng-disabled="b42" ng-click="bt42(0)">no</button>
+                </div>
+                <div class="ng-cloak"  ng-show="model.resr">
+                        <blockquote>
+                        <h1>Realistic(Doers)</h1>
+                        <p>
+                        People who have athletic ability, prefer to work with objects, machines, tools, plants or
+                        animals, or to be outdoors.
+                        </p>
+                        <p>
+                                <h3>College Majors</h3>
+                                        •  Agriculture <br>
+                                        •  Health Assistant <br>
+                                        •  Computers <br>
+                                        •  Construction <br>
+                                        •  Mechanic/Machinist <br>
+                                        •  Engineering <br>
+                                        •  Food and Hospitality <br>
+                        </p>
+                        <p>
+                        <h3>Related Paths</h3>            
+                        -Related Pathways<br>
+                        -Natural Resources<br>
+                        -health Services<br>
+                        -Industrial and Engineering Technology<br>
+                        -Arts and Communication<br>
+                        </p>
+                        <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1>           
+                        </blockquote>
+                 </div> 
+                 <div class="ng-cloak"  ng-show="model.resi">
+                        <blockquote>
+                                        <h1>Investigative (Thinkers)</h1>
+                                        <p>
+                                        People who like to observe, learn, investigate, analyze, evaluate, or solve problems
+                                        </p>
+                                        <p>
+                                                <h3>College Majors</h3>
+                                                •  Marine Biology <br>
+                                                •  Engineering <br>
+                                                •  Chemistry<br> 
+                                                •  Zoology<br>
+                                                •  Medicine/Surgery <br>
+                                                •  Consumer Economics<br> 
+                                                •  Psychology<br>
+
+                                        </p>
+                                        <p>
+                                        <h3>Related Pathways</h3>            
+                                        -health Services<br>
+                                        -Business<br>
+                                        -Public and human Services<br>
+                                        -Industrial and Engineering Technology<br>
+                                        </p>
+                                        <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1>         
+                        </blockquote>
+                 </div>     
+                 <div class="ng-cloak"  ng-show="model.resa">
+                         <blockquote>
+                                <h1>Artistic (Creators)</h1>
+                                <p>
+                                People who have artistic, innovating, or intuitional abilities and like to work in<br>
+                                unstructured situations using their imagination and creativity.
+                               </p>
+                                <p>
+                                        <h3>College Majors</h3>
+                                        •  Communications <br>
+                                        •  Cosmetology  <br>
+                                        •  Fine and Performing Arts <br>
+                                        •  Photography  <br>
+                                        •  Radio and TV  <br>
+                                        •  Interior Design  <br>
+                                        •  Architecture <br>
+
+                                </p>
+                                <p>
+                                <h3>Related Pathways</h3>            
+                                -Public and human Services
+                                -Arts and Communication
+                                </p>
+                                <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1>   
+                        </blockquote>      
+                 </div>     
+                 <div class="ng-cloak"  ng-show="model.ress">
+                        <blockquote>
+                                        <h1>Social (Helpers)</h1>
+                                        <p>
+                                                        People who like to work with people to enlighten, inform, help, train, <br>or cure them, or are
+                                                        skilled with words.
+                                       </p>
+                                        <p>
+                                                <h3>College Majors</h3>
+                                                •  Counseling <br>
+                                                •  Nursing <br>
+                                                •  Physical Therapy <br>
+                                                •  Travel <br>
+                                                •  Advertising <br>
+                                                •  Public Relations <br>
+                                                •  Education <br>
+        
+                                        </p>
+                                        <p>
+                                        <h3>Related Pathways</h3>            
+                                        -Public and human Services<br>
+                                        -Health services
+                                        </p>
+                                        <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1>   
+                        </blockquote>
+                 </div> 
+                 <div class="ng-cloak"  ng-show="model.rese">
+                        <blockquote>
+                                        <h1>Enterprising (Persuaders)</h1>
+                                        <p>
+                                                        People who like to work with people, influencing, persuading, leading <br>or managing for
+                                                        organizational goals or economic gain..
+                                       </p>
+                                        <p>
+                                                <h3>College Majors</h3>
+                                                •  Fashion Merchandising <br>
+                                                •  Real Estate <br>
+                                                •  Marketing/Sales <br>
+                                                •  Law <br>
+                                                •  Political Science <br>
+                                                •  International Trade  <br>
+                                                •  Banking/Finance<br>
+
+                                        </p>
+                                        <p>
+                                        <h3>Related Pathways</h3>            
+                                        -Public and human Services<br>
+                                        -Health services<br>
+                                        -Arts and Communication
+
+                                        </p>
+                                        <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1> 
+                        </blockquote>
+                 </div> 
+                <div class="ng-cloak"  ng-show="model.resc">
+                        <blockquote>
+                                        <h1>Conventional (Organizers)</h1>
+                                        <p>
+                                                People who like to work with data, have clerical or numerical ability,<br> carry out tasks in
+                                                detail, or follow through on others’ instructions.
+                                       </p>
+                                        <p>
+                                                <h3>College Majors</h3>
+                                                •  Accounting <br>
+                                                •  Court Reporting <br>
+                                                •  Insurance <br>
+                                                •  Administration <br>
+                                                •  Medical Records <br>
+                                                •  Banking <br>
+                                                •  Data Processing <br>
+
+                                       </p>
+                                        <p>
+                                        <h3>Related Pathways</h3>            
+                                        -Public and human Services<br>
+                                        -Health services<br>
+                                        -Arts and Communication
+
+                                        </p>
+                                        <h1 align="center"><mark>Your Holland Code:{{profession}}</mark></h1>
+                        </blockquote>
+                 </div>           
+
+        </div>
+        <button class="prev"  ng-hide="model.res"  ng-disabled="count!=42" ng-click="calculate()">Submit</button>
+    </div>     
+    <div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="./app/app.js"></script>
+        <script src="./app/appController.js"></script>
+    </body> 
+</html>

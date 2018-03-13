@@ -1,2 +1,2 @@
 # Insight
-Website for Students
+Mini Project.
